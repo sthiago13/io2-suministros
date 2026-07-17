@@ -3,7 +3,7 @@
 ## 1. Descripción General del Proyecto
 Este documento sirve como contexto base para el desarrollo de un Producto Mínimo Viable (MVP). Se trata de un proyecto de la asignatura Investigación de Operaciones II en la carrera de Ingeniería Informática de la UNET. 
 
-El equipo de desarrollo está conformado por 3 integrantes (incluyendo a mi compañero Gabriel y a mí). El objetivo es construir una aplicación Web de alto impacto social que aplique la Teoría de Colas para resolver un cuello de botella logístico real en un escenario de crisis humanitaria (específicamente, un contexto post-sismo).
+El equipo de desarrollo está conformado por 3 integrantes. El objetivo es construir una aplicación Web de alto impacto social que aplique la Teoría de Colas para resolver un cuello de botella logístico real en un escenario de crisis humanitaria (específicamente, un contexto post-sismo).
 
 ## 2. Escenario Elegido: Distribución de Suministros Vitales
 Abordaremos la logística de entrega de agua y alimentos en centros de acopio.
@@ -19,7 +19,8 @@ El motor de cálculo implementará un modelo de colas **(M/M/s): (FCFS/∞/∞)*
 *   $s$: Número de servidores (estaciones/mesas de entrega activas).
 
 **Ecuaciones a resolver en el código:**
-1.  **Factor de utilización:** $ho = \lambda / (s \cdot \mu)$
+1.  **Factor de utilización:** $
+ho = \lambda / (s \cdot \mu)$
 2.  **Probabilidad de sistema vacío ($P_0$):** Requiere cálculo de sumatoria hasta $s-1$.
 3.  **Longitud de la cola ($L_q$):** Promedio de personas esperando.
 4.  **Tiempo de espera en cola ($W_q$):** $L_q / \lambda$.
