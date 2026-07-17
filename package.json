@@ -1,0 +1,34 @@
+{
+  "name": "io2-suministros",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "api": "cd server && npm install --silent && node index.js",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "start": "npm run docker:up && npm run dev",
+    "start:local": "cd server && npm install --silent && node index.js & npm run dev"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "oxlint": "^1.71.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1"
+  }
+}

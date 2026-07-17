@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: suministros
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+      - ./docker/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d suministros"]
+      interval: 2s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: ./server
+    ports:
+      - "54321:3000"
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/suministros
+    depends_on:
+      db:
+        condition: service_healthy
