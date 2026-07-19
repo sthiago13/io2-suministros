@@ -24,6 +24,7 @@ La base de datos PostgreSQL y la API se levantan automáticamente con Docker Com
 | Comando              | Descripción                                      |
 |----------------------|--------------------------------------------------|
 | `npm run dev`        | Inicia el frontend con Vite (http://localhost:5173) |
+| `npm run api`        | Inicia la API Express con PostgreSQL JSON        |
 | `npm run build`      | Compila TypeScript y genera el build de producción |
 | `npm run docker:up`  | Levanta PostgreSQL + API en segundo plano        |
 | `npm run docker:down`| Detiene y elimina los contenedores               |
